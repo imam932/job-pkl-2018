@@ -21,10 +21,15 @@
 </template>
 <script>
 import Banner from "@/components/Banner.vue";
+import Terbaru from "@/components/NewNews.vue";
+import Populer from "@/components/PopulerNews.vue";
+import Categori from "@/components/Categoris.vue";
 export default {
     components:{
         'app-banner': Banner,
+        'app-newsNew': Terbaru,
+        'app-newsPopuler': Populer,
+        'app-categori': Categori
     }   
-
 }
 </script>

@@ -6,6 +6,7 @@ import router from './router'
 // import BootstrapVue from 'bootstrap-vue'
 import VueResource from 'vue-resource'
 import Axios from 'axios'
+import VueProgressiveImage from 'vue-progressive-image'
 import '@/assets/css/bootstrap-3.1.1.min.css'
 import '@/assets/css/font-awesome.min.css'
 import '@/assets/css/style.css'
@@ -22,6 +23,7 @@ import '@/assets/js/banner.js'
 
 // Vue.use(BootstrapVue)
 Vue.use(VueResource);
+Vue.use(VueProgressiveImage)
 Axios.defaults.baseURL = 'http://localhost:8000/'
 Vue.config.productionTip = false
 

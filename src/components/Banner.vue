@@ -3,7 +3,7 @@
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner" v-for="(articel,index) in articles" :key="articel.id">
 				<div class="item" :class="{'active' : index === 0}">
-					<img v-bind:src="articel.news_image_new" >
+					<progressive-img style="max-width: 100%;" :src="articel.news_image_new" :placeholder="articel.news_image_new" :blur="30" />
 					<div class="carousel-caption">
 						<h4 class="col-sm-4 kategori">
 							<a class="label label-success" href="#">Olahraga</a>
@@ -42,7 +42,7 @@ export default {
 	created (){
 		NewsApi.bannerNews().then((result) => {
 			this.articles = result.data.result;
-			console.log(result.data.result);
+			// console.log(result.data.result);
 		}).catch((err) => {
 			console.log(err);
 		}).finally(()=>{

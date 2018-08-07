@@ -13,6 +13,13 @@ export default{
         }).catch((err) => {
             console.log(err);
         });
+    },
+    populerNews(){
+        return Axios.get('news/populer').then((response) => {
+            return response
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
 }
