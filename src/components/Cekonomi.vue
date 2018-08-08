@@ -4,16 +4,16 @@
 			<div class="mag-inner">
 				<div class="col-md-9 mag-innert-left">
 					<div class="technology">
-						<h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i>POLITIK</h2>
+						<h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i>EKONOMI</h2>
 						<div class="col-md-6 tech-img">
-				          <img src="images/03-news.jpg" class="img-responsive" alt=""/>
+						  <progressive-img class="img-responsive" :src="articles[0].news_image_new" placeholder="http://cancer.pybossa.com/static/img/placeholder.project.png" fallback="http://cancer.pybossa.com/static/img/placeholder.project.png" :blur="30" />
 						</div>
 						<div class="col-md-6 tech-text">
 							<div class="editor-pics">
-								<div class="col-md-12 item-details">
-								<span>ayo nyapres</span>
-								<h5 class="inner two"><a href="#">Menanti Pasangan Jokowi dan Prabowo di Pilpres 2019</a></h5>
-								<div class="td-post-date two">Senin, 06 Agustus 2018 | 10.00</div>
+								<div class="col-md-12 item-details" v-for="(articel) in articles" :key="articel.id">
+								<span>{{articel.news_tags}}</span>
+								<h5 class="inner two"><a href="#">{{articel.news_title}}</a></h5>
+								<div class="td-post-date two">{{articel.news_datepub}} | {{articel.news_writer}}</div>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -38,14 +38,14 @@
 <script>
 import  NewsApi  from "@/service/api/News";
 export default {
-    name: 'Categoris',
+    name: 'CEkonomi',
     data () {
         return {
         articles: []
         }
 	},
-	created (){
-		NewsApi.bannerNews().then((result) => {
+	async created (){
+		NewsApi.CategoriNews(3).then((result) => {
 			this.articles = result.data.result;
 			// console.log(result.data.result);
 		}).catch((err) => {

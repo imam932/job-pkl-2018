@@ -20,6 +20,13 @@ export default{
         }).catch((err) => {
             console.log(err);
         });
+    },
+    CategoriNews(categori){
+        return Axios.get('news/limit/'+categori).then((response) => {
+            return response
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
 }
