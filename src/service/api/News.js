@@ -34,6 +34,13 @@ export default{
         }).catch((err) => {
             console.log(err);
         });
+    },
+    CategoriNewsAll(categori){
+        return Axios.get('news/categori/'+categori).then((response) => {
+            return response
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
 }

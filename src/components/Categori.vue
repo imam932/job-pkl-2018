@@ -49,9 +49,6 @@ export default {
         }
 	},
 	async created(){
-		
-	},
-	async beforeMount(){
 		NewsApi.CategoriNews(this.id_kategori).then((result) => {
 			this.articles = result.data.result;
 			// console.log(this.articles);

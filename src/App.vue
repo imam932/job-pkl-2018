@@ -45,16 +45,16 @@
 									<li><a href="#">Madura</a></li>
 								</ul>
 							</li>
-							<li><a href="#">Politik</a></li>
-							<li><a href="#">Ekonomi</a></li>
-							<li><a href="#">Pendidikan</a></li>
-							<li><a href="#">Riset</a></li>
-							<li><a href="#">Olahraga</a></li>
-							<li><a href="#">Tekno</a></li>
-							<li><a href="#">Wisata</a></li>
-							<li><a href="#">Kuliner</a></li>
-							<li><a href="#">Sehat</a></li>
-							<li><a href="#">Gaya</a></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 2 }}">Politik</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 3 }}">Ekonomi</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 9 }}">Pendidikan</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 7 }}">Riset</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 6 }}">Olahraga</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 4 }}">Tekno</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 8 }}">Wisata</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 10 }}">Kuliner</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 11 }}">Sehat</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 12 }}">Gaya</router-link></li>
 							<li><a href="#">Lapsus</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other</a>
