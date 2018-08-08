@@ -6,8 +6,8 @@
 		<div class="container">
 			<div class="mag-inner">
 				<div class="col-md-9 mag-innert-left">
-                    <app-newsNew></app-newsNew>
-                    <app-newsPopuler></app-newsPopuler>
+                    <app-news title="Terbaru"></app-news>
+                    <app-news title="Populer" ></app-news>
 				</div>
 				<div class="col-md-3 mag-inner-right">
 				</div>
@@ -16,29 +16,21 @@
 		</div>
 	</div>
 	<!-- end content terbaru dan terpopuler -->
-        <app-cPolitik></app-cPolitik>
-        <app-cPendidikan></app-cPendidikan>
-        <app-cRiset></app-cRiset>
-        <app-cEkonomi></app-cEkonomi>
+        <app-categori title="Peristiwa" id_kategori="1"></app-categori>
+        <app-categori title="Politik" id_kategori="2"></app-categori>
+        <app-categori title="Olahraga" id_kategori="6"></app-categori>
+        <app-categori title="Teknologi" id_kategori="4"></app-categori>
     </div>
 </template>
 <script>
 import Banner from "@/components/Banner.vue";
-import Terbaru from "@/components/NewNews.vue";
-import Populer from "@/components/PopulerNews.vue";
-import Cpolitik from "@/components/Cpolitik.vue";
-import Cpendidikan from "@/components/Cpendidikan.vue";
-import Criset from "@/components/Criset.vue";
-import Cekonomi from "@/components/Cekonomi.vue";
+import News from "@/components/News.vue";
+import Kategori from "@/components/Categori.vue";
 export default {
     components:{
         'app-banner': Banner,
-        'app-newsNew': Terbaru,
-        'app-newsPopuler': Populer,
-        'app-cPolitik': Cpolitik,
-        'app-cPendidikan': Cpendidikan,
-        'app-cRiset': Criset,
-        'app-cEkonomi': Cekonomi
+        'app-news': News,
+        'app-categori': Kategori,
     }   
 }
 </script>
