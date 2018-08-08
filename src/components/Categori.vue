@@ -10,9 +10,9 @@
 						</div>
 						<div class="col-md-6 tech-text">
 							<div class="editor-pics">
-								<div class="col-md-12 item-details" v-for="(articel) in articles" :key="articel.id">
+								<div class="col-md-12 item-details" v-for="(articel) in articles" :key="articel.news_id">
 								<span>{{articel.news_tags}}</span>
-								<h5 class="inner two"><a href="#">{{articel.news_title}}</a></h5>
+								<h5 class="inner two"><h5 class="inner two"><router-link :to="{ name: 'Detail', params: { id: articel.news_id }}">{{articel.news_title}}</router-link></h5></h5>
 								<div class="td-post-date two">{{articel.news_datepub}} | {{articel.news_writer}}</div>
 								</div>
 								<div class="clearfix"></div>

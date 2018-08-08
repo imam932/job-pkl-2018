@@ -27,6 +27,13 @@ export default{
         }).catch((err) => {
             console.log(err);
         });
+    },
+    detailNews(id){
+        return Axios.get('news/'+id).then((response) => {
+            return response
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
 }
