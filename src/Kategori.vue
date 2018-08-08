@@ -60,8 +60,7 @@ export default {
     async created(){
         NewsApi.CategoriNewsAll(this.$route.params.kategori).then((result) => {
             this.articles = result.data.result;
-            console.log(result.data.result);
-            
+            // console.log(result.data.result);
 		}).catch((err) => {
 			console.log(err);
 		}).finally(()=>{

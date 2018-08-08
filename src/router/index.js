@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/Home'
 import Detail from '@/Detail'
 import Kategori from '@/Kategori'
+import TentangKami from '@/TentangKami'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ let router = new Router({
       path: '/kategori/:kategori',
       name: 'Kategori',
       component: Kategori,
+    },
+    {
+      path: '/tentangkami',
+      name: 'TentangKami',
+      component: TentangKami,
     },
   ]
 })

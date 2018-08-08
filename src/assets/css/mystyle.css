@@ -275,6 +275,10 @@
 	text-align: right;
 }
 
+.main-content2 .container .mag-inner .mag-inner-right .top-news {
+	margin-top: 0 !important;
+}
+
 .main-content3 {
 	padding: 1.5em 0 0;
     margin-bottom: 1.5em;
@@ -401,7 +405,10 @@ h3.tittle.bottom {
 }
 
 .mag-bottom {
-    margin: 1.5em 0 0;
+	margin: 1.5em 0 0;
+	padding: 0;
+	background-color: #fff;
+	border: 1px solid rgba(231,231,231,1.00);
 }
 
 .mag-bottom .tittle {
@@ -512,8 +519,20 @@ a.socialIcon:hover, .socialHoverClass {
 /** end sosial media **/
 
 /** tentang kami **/
+.section-contact .container .contact-main .page-contact-form {
+	padding: 15px;
+	margin-bottom: 3em;
+	background-color: #fff;
+	border: 1px solid rgba(231,231,231,1.00);
+}
+
+.section-contact .container .page-maps {
+	padding: 15px;
+	background-color: #fff;
+	border: 1px solid rgba(231,231,231,1.00);
+}
+
 .section-contact .container .contact-main .contact-in h3 {
-	/*color: #3A539B;*/
 	color: #000000;
 	margin-bottom: 0;
 	text-align: left;
@@ -522,6 +541,7 @@ a.socialIcon:hover, .socialHoverClass {
 
 .section-contact {
 	padding: 1.5em 0;
+	background-color: #F1EFEF;
 }
 
 .section-contact .container {
@@ -543,4 +563,37 @@ a.socialIcon:hover, .socialHoverClass {
 
 .send input[type="submit"] {
 	background-color: #3A539B;
+}
+
+.cont-kategori {
+	padding: 0;
+}
+
+.kategori {
+    padding: 0 15px 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.kategori:nth-last-child(2) {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.kategori .inner {
+	margin: 0 0 0.7em;
+	margin-top: 0 !important;
+}
+
+.kategori .editor-pics {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.kategori .editor-pics .item-details {
+	padding: 0 !important;
+}
+
+.td-post-date .glyphicon {
+	margin-right: 5px;
 }

@@ -15,7 +15,7 @@
 						</button>
 					</div>
 					<ul class="nav navbar-nav navbar-right top-kanan">
-						<li><span class="hari_tgl">Senin, 06 Agustus 2018</span></li>
+						<li><span class="hari_tgl" id="date">{{ new Date().toString() }}</span></li>
 						<li>
 							<form class="navbar-form form-inline form-group">
 								<input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
@@ -36,13 +36,13 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Peristiwa</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Surabaya</a></li>
+									<li><a href="https://www.surabayatimes.com/kanal/peristiwa" target="_blank"  >Surabaya</a></li>
 									<li class="divider"></li>
 									<li><a href="#">Malang</a></li>
 									<li class="divider"></li>
-									<li><a href="#">Jombang</a></li>
+									<li><a href="https://www.jombangtimes.com/kanal/peristiwa" target="_blank" >Jombang</a></li>
 									<li class="divider"></li>
-									<li><a href="#">Madura</a></li>
+									<li><a href="https://www.maduratimes.com/kanal/peristiwa" target="_blank" >Madura</a></li>
 								</ul>
 							</li>
 							<li><router-link :to="{ name: 'Kategori', params: { kategori: 2 }}">Politik</router-link></li>
@@ -83,7 +83,7 @@
 		</div>
 		<div class="col-md-5 menu-footer">
 			<ul class="list-inline navbar-right">
-				<li class="list-inline-item"><a href="#">Tentang Kami</a></li>
+				<li class="list-inline-item"><router-link to="/tentangkami">Tentang Kami</router-link></li>
 				<li class="list-inline-item"><a href="#">Redaksi</a></li>
 				<li class="list-inline-item"><a href="#">PMC</a></li>
 			</ul>
@@ -92,9 +92,8 @@
 	</div>
   </div>
 </template>
-
 <script>
 export default {
-  name: 'app'
+  name: 'app',
 }
 </script>
