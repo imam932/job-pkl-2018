@@ -15,7 +15,7 @@
 						</button>
 					</div>
 					<ul class="nav navbar-nav navbar-right top-kanan">
-						<li><span class="hari_tgl" id="date">{{ new Date().toString() }}</span></li>
+						<li><span class="hari_tgl" id="date"></span></li>
 						<li>
 							<form class="navbar-form form-inline form-group">
 								<input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
@@ -32,7 +32,7 @@
 				<div class="container">
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li><a href="/">Home</a></li>
+							<li><router-link :to="{ name: 'Home'}">Home</router-link></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Peristiwa</a>
 								<ul class="dropdown-menu">
@@ -45,16 +45,16 @@
 									<li><a href="https://www.maduratimes.com/kanal/peristiwa" target="_blank" >Madura</a></li>
 								</ul>
 							</li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 2 }}">Politik</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 3 }}">Ekonomi</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 9 }}">Pendidikan</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 7 }}">Riset</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 6 }}">Olahraga</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 4 }}">Tekno</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 8 }}">Wisata</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 10 }}">Kuliner</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 11 }}">Sehat</router-link></li>
-							<li><router-link :to="{ name: 'Kategori', params: { kategori: 12 }}">Gaya</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Politik' }}">Politik</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Ekonomi' }}">Ekonomi</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Pendidikan' }}">Pendidikan</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Riset' }}">Riset</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Olahraga' }}">Olahraga</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Tekno' }}">Tekno</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Wisata' }}">Wisata</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Kuliner' }}">Kuliner</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Sehat' }}">Sehat</router-link></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Gaya' }}">Gaya</router-link></li>
 							<li><a href="#">Lapsus</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other</a>
@@ -95,5 +95,18 @@
 <script>
 export default {
   name: 'app',
+  methods: {
+	  dateNow(){
+		var monthNames = ["January", "February", "March","April", "May", "June", "July","August", "September", "October","November", "December"];
+		var day = date.getDate();
+		var monthIndex = date.getMonth();
+		var year = date.getFullYear();
+
+		return day + ' ' + monthNames[monthIndex] + ' ' + year;
+	  }
+  },
+  created(){
+	  document.getElementById('date').innerHTML += this.dateNow();
+  }
 }
 </script>

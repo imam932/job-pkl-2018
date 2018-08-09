@@ -58,7 +58,29 @@ export default {
         }
     },
     async created(){
-        NewsApi.CategoriNewsAll(this.$route.params.kategori).then((result) => {
+		var params;
+		if(this.$route.params.kategori === 'Politik'){
+			params = 2;
+		}else if (this.$route.params.kategori === 'Ekonomi') {
+			params = 3;
+		}else if (this.$route.params.kategori === 'Pendidikan') {
+			params = 9;
+		}else if (this.$route.params.kategori === 'Riset') {
+			params = 7;
+		}else if (this.$route.params.kategori === 'Olahraga') {
+			params = 6;
+		}else if (this.$route.params.kategori === 'Tekno') {
+			params = 4;
+		}else if (this.$route.params.kategori === 'Wisata') {
+			params = 8;
+		}else if (this.$route.params.kategori === 'Kuliner') {
+			params = 10;
+		}else if (this.$route.params.kategori === 'Sehat') {
+			params = 11;
+		}else{
+			params = 12;
+		}
+        NewsApi.CategoriNewsAll(params).then((result) => {
             this.articles = result.data.result;
             // console.log(result.data.result);
 		}).catch((err) => {
