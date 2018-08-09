@@ -74,7 +74,7 @@
 		</div>
 	</div>
 	<!-- end header -->
-    <router-view />
+    <router-view :key="$route.path"/>
     <div class="clearfix"></div>
 
 	<div class="col-md-12 copyright">

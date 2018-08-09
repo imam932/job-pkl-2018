@@ -1,5 +1,12 @@
-<template>
-    <div class="main-content2 main-content3">
+<script>
+import  NewsApi  from "@/service/api/News";
+import ButtonShare from "@/components/ShareButton.vue";
+import Rating from "@/components/Rating.vue";
+
+export default {
+    name: 'Kategori',
+	template: `
+		<div class="main-content2 main-content3">
 		<div class="container">
 			<div class="mag-inner">
 				<div class="col-md-8 mag-innert-left cont-kategori">
@@ -41,13 +48,7 @@
 			</div>
 		</div>
 	</div>
-</template>
-<script>
-import  NewsApi  from "@/service/api/News";
-import ButtonShare from "@/components/ShareButton.vue";
-import Rating from "@/components/Rating.vue";
-export default {
-    name: 'Kategori',
+	`,
     components:{
         'app-rating' : Rating,
         'app-share' : ButtonShare
