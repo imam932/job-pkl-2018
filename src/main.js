@@ -19,8 +19,6 @@ import '@/assets/js/bootstrap-3.1.1.min.js'
 import '@/assets/js/banner.js'
 
 
-
-
 // Vue.use(BootstrapVue)
 Vue.use(VueResource);
 Vue.use(VueProgressiveImage)

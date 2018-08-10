@@ -55,7 +55,7 @@
 							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Kuliner' }}">Kuliner</router-link></li>
 							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Sehat' }}">Sehat</router-link></li>
 							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Gaya' }}">Gaya</router-link></li>
-							<li><a href="#">Lapsus</a></li>
+							<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Lapsus' }}">Lapsus</router-link></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other</a>
 								<ul class="dropdown-menu">
