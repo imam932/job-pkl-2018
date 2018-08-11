@@ -4,6 +4,7 @@ import Home from '@/Home'
 import Detail from '@/Detail'
 import Kategori from '@/Kategori'
 import TentangKami from '@/TentangKami'
+import Search from '@/Search'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ let router = new Router({
       path: '/kategori/:kategori',
       name: 'Kategori',
       component: Kategori,
+    },
+    {
+      path: '/search/:parameter',
+      name: 'Search',
+      component: Search,
     },
     {
       path: '/tentangkami',

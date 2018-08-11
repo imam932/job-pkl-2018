@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueMoment from 'vue-moment'
 // import BootstrapVue from 'bootstrap-vue'
 import VueResource from 'vue-resource'
 import Axios from 'axios'
@@ -26,6 +27,11 @@ Vue.use(VueResource);
 Vue.use(VueProgressiveImage)
 Axios.defaults.baseURL = 'http://localhost:8000/'
 Vue.config.productionTip = false
+const moment = require('moment')
+require('moment/locale/id')
+Vue.use(VueMoment, {
+  moment
+})
 
 /* eslint-disable no-new */
 new Vue({

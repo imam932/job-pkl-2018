@@ -15,11 +15,13 @@
 						</button>
 					</div>
 					<ul class="nav navbar-nav navbar-right top-kanan">
-						<li><span class="hari_tgl" id="date"></span></li>
+						<li><span class="hari_tgl" id="date">{{new Date() | moment('dddd, Do MMMM YYYY')}}</span></li>
 						<li>
 							<form class="navbar-form form-inline form-group">
-								<input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
-								<i class="fa fa-search" aria-hidden="true"></i>
+								<input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" v-model="message">
+								<!-- <input v-model="message" placeholder="edit me"> -->
+								<!-- <p>Message is: {{ message }}</p> -->
+								<router-link :to="{ name: 'Search', params: { parameter: this.message }}"><i class="fa fa-search" aria-hidden="true"></i></router-link>
 							</form>
 						</li>
 					</ul>
@@ -95,18 +97,11 @@
 <script>
 export default {
   name: 'app',
+  props:{
+        message : String
+    },
   methods: {
-	  dateNow(){
-		var monthNames = ["January", "February", "March","April", "May", "June", "July","August", "September", "October","November", "December"];
-		var day = date.getDate();
-		var monthIndex = date.getMonth();
-		var year = date.getFullYear();
-
-		return day + ' ' + monthNames[monthIndex] + ' ' + year;
-	  }
+	  
   },
-  created(){
-	  document.getElementById('date').innerHTML += this.dateNow();
-  }
 }
 </script>

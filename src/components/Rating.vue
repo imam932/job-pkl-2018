@@ -22,7 +22,7 @@
 import  NewsApi  from "@/service/api/News";
 export default {
     name: 'Rating',
-	 props:{
+	props:{
 		title : String,
     },
     data () {
