@@ -59,7 +59,7 @@ export default {
         }
     },
     async created(){
-		var params;
+		var params = 0;
 		var limit = 1;
 		if (limit == 1) {
 			limit = 1;
@@ -85,11 +85,12 @@ export default {
 			params = 10;
 		}else if (this.$route.params.kategori === 'Sehat') {
 			params = 11;
-		}else{
+		}else if (this.$route.params.kategori === 'Gaya') {
 			params = 12;
 		}
 
         NewsApi.CategoriNewsAll(params,limit).then((result) => {
+			console.log(params);
             this.articles = result.data.result;
             // console.log(result.data.result);
 		}).catch((err) => {

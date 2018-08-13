@@ -7,6 +7,8 @@
         <div class="editor-pics" v-for="(articel) in articles" :key="articel.news_id">
             <div class="col-md-5 item-pic">
                 <progressive-img class="img-responsive" :src="articel.news_image_new" placeholder="http://cancer.pybossa.com/static/img/placeholder.project.png" fallback="http://cancer.pybossa.com/static/img/placeholder.project.png" :blur="30" />
+                <!-- <progressive-img class="img-responsive" src="${require(`./images/gallery.png`)}" placeholder="http://cancer.pybossa.com/static/img/placeholder.project.png" :blur="30" /> -->
+                
             </div>
             <div class="col-md-7 item-details">
                 <span>{{articel.news_tags}}</span>
@@ -22,11 +24,11 @@ import  NewsApi  from "@/service/api/News";
 export default {
     name: 'News',
     props:{
-        title : String
+        title : String,
     },
     data() {
         return {
-            articles : []
+            articles : [],
         }
     },
     async created(){

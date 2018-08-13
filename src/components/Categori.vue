@@ -20,7 +20,7 @@
 						</div>
 						<div class="col-md-12 view-all">
 							<div class="btn-group" role="group" aria-label="">
-								<a href="#">View All</a>
+								<router-link :to="{ name: 'Kategori', params: { kategori: this.title }}">View All</router-link>
 							</div>
 						</div>
 						<div class="clearfix"></div>

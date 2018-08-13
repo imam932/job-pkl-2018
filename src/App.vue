@@ -17,7 +17,7 @@
 					<ul class="nav navbar-nav navbar-right top-kanan">
 						<li><span class="hari_tgl" id="date">{{new Date() | moment('dddd, Do MMMM YYYY')}}</span></li>
 						<li>
-							<form class="navbar-form form-inline form-group">
+							<form class="navbar-form form-inline form-group" @submit.prevent="search">
 								<input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" v-model="message">
 								<!-- <input v-model="message" placeholder="edit me"> -->
 								<!-- <p>Message is: {{ message }}</p> -->
@@ -97,11 +97,19 @@
 <script>
 export default {
   name: 'app',
-  props:{
-        message : String
-    },
+//   props:{
+//         message : String
+//     },
+	data() {
+		return {
+			message : ''
+		}
+	},
   methods: {
-	  
+	  search(){
+		//   console.log(this.message);
+		  this.$router.push({ name: 'Search', params: { parameter: this.message }})
+	  }
   },
 }
 </script>
