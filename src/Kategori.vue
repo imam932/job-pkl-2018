@@ -13,7 +13,7 @@ export default {
 			<div class="mag-inner">
 				<div class="col-md-8 mag-innert-left cont-kategori">
 					<div class="technology">
-						<h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i>OLAHRAGA</h2>
+						<h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i>{{this.$route.params.kategori}}</h2>
 						
 						<div class="col-md-12 kategori" v-for="(articel) in articles" :key="articel.news_id">
 							<div class="col-md-3 tech-img">
@@ -68,10 +68,22 @@ export default {
             articles:[],
         }
     },
+<<<<<<< HEAD
 	methods : {
 		async created($state) {
 
 			var params;
+=======
+    async created(){
+		var params = 0;
+		var limit = 1;
+		if (limit == 1) {
+			limit = 1;
+		}else{
+			limit = this.articles.length / 20 + 1; 
+		}
+		 
+>>>>>>> c24f6bfafa6b5a087e80b325ab2d83cc0ea90426
 		if(this.$route.params.kategori === 'Politik'){
 			params = 2;
 		}else if (this.$route.params.kategori === 'Ekonomi') {
@@ -90,7 +102,7 @@ export default {
 			params = 10;
 		}else if (this.$route.params.kategori === 'Sehat') {
 			params = 11;
-		}else{
+		}else if (this.$route.params.kategori === 'Gaya') {
 			params = 12;
 		}
 
@@ -109,6 +121,7 @@ export default {
 				}
 			});
 		},
+
 	},
 }
 </script>

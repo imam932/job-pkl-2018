@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="mag-inner">
 				<div class="col-md-9 mag-innert-left">
-					<div class="technology">
+					<div class="technology" v-if="articles[0]">
 						<h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i>{{this.title}}</h2>
 						<div class="col-md-6 tech-img">
 						  <progressive-img class="img-responsive" :src="articles[0].news_image_new" placeholder="http://cancer.pybossa.com/static/img/placeholder.project.png" fallback="http://cancer.pybossa.com/static/img/placeholder.project.png" :blur="30" />
@@ -20,7 +20,7 @@
 						</div>
 						<div class="col-md-12 view-all">
 							<div class="btn-group" role="group" aria-label="">
-								<a href="#">View All</a>
+								<router-link :to="{ name: 'Kategori', params: { kategori: this.title }}">View All</router-link>
 							</div>
 						</div>
 						<div class="clearfix"></div>
@@ -49,7 +49,8 @@ export default {
         }
 	},
 	async created(){
-		NewsApi.CategoriNews(this.id_kategori).then((result) => {
+		let limit = this.articles.length / 20 + 1;
+		NewsApi.CategoriNews(this.id_kategori,limit).then((result) => {
 			this.articles = result.data.result;
 			// console.log(this.articles);
 		}).catch((err) => {
