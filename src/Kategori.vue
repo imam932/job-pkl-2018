@@ -2,6 +2,8 @@
 import  NewsApi  from "@/service/api/News";
 import ButtonShare from "@/components/ShareButton.vue";
 import Rating from "@/components/Rating.vue";
+import InfiniteLoading from "vue-infinite-loading";
+import Axios from 'axios';
 
 export default {
     name: 'Kategori',
@@ -34,6 +36,12 @@ export default {
 							</div>
 						</div>
 
+						<infinite-loading @infinite="created">
+							<span slot="no-more">
+							Konten Berakhir
+							</span>
+						</infinite-loading>
+
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -48,18 +56,22 @@ export default {
 			</div>
 		</div>
 	</div>
+	
 	`,
     components:{
         'app-rating' : Rating,
-        'app-share' : ButtonShare
+        'app-share' : ButtonShare,
+		InfiniteLoading,
     },
     data() {
         return {
             articles:[],
         }
     },
-    async created(){
-		var params;
+	methods : {
+		async created($state) {
+
+			var params;
 		if(this.$route.params.kategori === 'Politik'){
 			params = 2;
 		}else if (this.$route.params.kategori === 'Ekonomi') {
@@ -81,14 +93,22 @@ export default {
 		}else{
 			params = 12;
 		}
-        NewsApi.CategoriNewsAll(params).then((result) => {
-            this.articles = result.data.result;
-            // console.log(result.data.result);
-		}).catch((err) => {
-			console.log(err);
-		}).finally(()=>{
-			this.loading = false
-        });
+
+		var pages = this.articles.length / 20 + 1;
+
+			Axios.get('news/categori/'+params+'/'+pages,
+			).then((result) => {
+				if(result.data.result.length){
+            		this.articles = this.articles.concat(result.data.result);
+					$state.loaded();
+					if(this.articles.length / 20 === 10){
+						$state.complete();
+					}
+				}else{
+					$state.complete();
+				}
+			});
+		},
 	},
 }
 </script>

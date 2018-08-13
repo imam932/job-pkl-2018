@@ -35,8 +35,8 @@ export default{
             console.log(err);
         });
     },
-    CategoriNewsAll(categori){
-        return Axios.get('news/categori/'+categori).then((response) => {
+    CategoriNewsAll(categori, limit){
+        return Axios.get('news/categori/'+categori+'/'+limit).then((response) => {
             return response
         }).catch((err) => {
             console.log(err);
