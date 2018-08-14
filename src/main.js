@@ -23,6 +23,8 @@ import '@/assets/js/banner.js'
 // Vue.use(BootstrapVue)
 Vue.use(VueResource);
 Vue.use(VueProgressiveImage)
+var SocialSharing = require('vue-social-sharing')
+Vue.use(SocialSharing)
 Axios.defaults.baseURL = 'http://localhost:8000/'
 Vue.config.productionTip = false
 const moment = require('moment')

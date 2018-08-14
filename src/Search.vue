@@ -21,12 +21,12 @@ export default {
 								<div class="col-md-9 tech-text">
 									<div class="editor-pics">
 										<div class="col-md-12 item-details">
-											<span>{{ news.pagemap.webpage[0].name }}</span>
+											<span><a :href="news.link">{{ news.pagemap.webpage[0].name }}</a></span>
 											<h5 class="inner two">{{ news.pagemap.webpage[0].description}}</h5>
 											<div class="td-post-date two">
 												<span>
 													<b class="glyphicon glyphicon-calendar"></b>{{news.pagemap.metatags[0].author}} | 
-													<b class="glyphicon glyphicon-time"></b>{{ news.pagemap.article[0].datepublished }}
+													<b class="glyphicon glyphicon-eye-open"></b>{{ news.pagemap.article[0].datepublished }}
 												</span>
 											</div>
 										</div>

@@ -28,9 +28,9 @@ export default{
             console.log(err);
         });
     },
-    detailNews(id){
-        return Axios.get('news/'+id).then((response) => {
-            return response
+    detailNews(id,page){
+        return Axios.get('news/'+page+'/'+id).then((response) => {
+            return response.data.result
         }).catch((err) => {
             console.log(err);
         });

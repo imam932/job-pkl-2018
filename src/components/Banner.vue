@@ -6,17 +6,16 @@
 					<progressive-background style="max-width: 100%;" placeholder="http://cancer.pybossa.com/static/img/placeholder.project.png" :src="articel.news_image_new" fallback="http://cancer.pybossa.com/static/img/placeholder.project.png" :blur="100" />
 					<div class="carousel-caption">
 						<h4 class="col-sm-4 kategori">
-							<a class="label label-success" href="#">Olahraga</a>
 						</h4>
 						<h4 class="col-sm-8 tanggal-post">
 							<span>
 								<b class="glyphicon glyphicon-calendar"></b>{{articel.news_datepub}}| 
-								<b class="glyphicon glyphicon-time"></b>{{articel.news_view}}
+								<b class="glyphicon glyphicon-eye-open"></b>{{articel.news_view}}
 							</span>
 						</h4>
 						<div class="clearfix"></div>
 
-						<p class="deskripsi">{{articel.news_caption}} <a href="#"><kbd class="btn-info">Baca selengkapnya ...</kbd></a></p>
+						<p class="deskripsi">{{articel.news_caption}} <a href="#"><br><kbd class="btn-info"><router-link :to="{ name: 'Detail', params: { id: articel.news_id }}">Baca selengkapnya ...</router-link></kbd></a></p>
 					</div>
 				</div>
 			</div>

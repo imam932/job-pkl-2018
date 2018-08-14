@@ -298,7 +298,17 @@
 	text-align: justify;
 	padding: 0;
 	margin-bottom: 0.5em;
+    border-bottom: 3px solid #DDD;
+}
+
+.banner-bottom-left-grids {
     border-bottom: 3px solid #000;
+    margin-bottom: 3em;
+}
+
+.banner-bottom-left-grids:last-child {
+    border-bottom: none !important;
+    margin-bottom: 3em;
 }
 
 .main-content3 .container .mag-inner .mag-innert-left .banner-bottom-left-grids .single-left-grid .info-posting {

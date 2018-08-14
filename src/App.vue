@@ -5,7 +5,7 @@
 			<!-- navbar top -->
 			<nav class="navbar navbar-default navbar-top">
 				<div class="container">
-					<a href="#" class="pull-left img-logo"><img src="@/assets/images/logo.png"></a>
+					<a href="/" class="pull-left img-logo"><img src="@/assets/images/logo.png"></a>
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 							<span class="sr-only">Toggle navigation</span>
@@ -40,7 +40,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="https://www.surabayatimes.com/kanal/peristiwa" target="_blank"  >Surabaya</a></li>
 									<li class="divider"></li>
-									<li><a href="#">Malang</a></li>
+									<li><router-link :to="{ name: 'Kategori', params: { kategori: 'Peristiwa' }}">Malang</router-link></li>
 									<li class="divider"></li>
 									<li><a href="https://www.jombangtimes.com/kanal/peristiwa" target="_blank" >Jombang</a></li>
 									<li class="divider"></li>

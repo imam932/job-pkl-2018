@@ -27,7 +27,7 @@ export default {
 										<div class="td-post-date two">
 											<span>
 												<b class="glyphicon glyphicon-calendar"></b>{{articel.created}} | 
-												<b class="glyphicon glyphicon-time"></b>{{articel.news_view}}
+												<b class="glyphicon glyphicon-eye-open"></b>{{articel.news_view}}
 											</span>
 										</div>
 									</div>
@@ -47,7 +47,29 @@ export default {
 				</div>
 
 				<div class="col-md-4 mag-inner-right">
-                    <app-share></app-share>
+                    <div>
+                    <h4 class="side"><i class="glyphicon glyphicon-share"> </i>TEMUKAN KAMI</h4>
+				        <div class="edit-pics">
+				            
+				            <ul class="social-network social-circle">
+				                <li>
+				                    <a href="#" class="icoRss" title="Rss" target="_blank"><i class="fa fa-rss"></i></a>
+				                </li>
+				                <li>
+				                    <a href="https://id-id.facebook.com/MalangTimes/" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+				                </li>
+				                <li>
+				                    <a href="https://twitter.com/malangtimes" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+				                </li>
+				                <li>
+				                    <a href="https://plus.google.com/109285582542046078077" class="icoGoogle" title="Google +" target="_blank"><i class="fa fa-google-plus"></i></a>
+				                </li>
+				                <li>
+				                    <a href="https://www.linkedin.com/company/jatim-times-network" class="icoLinkedin" title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+				                </li>
+					        </ul>
+					        </div>
+					    </div>
                     <app-rating title="Terbaru"></app-rating>
                     <app-rating title="Populer"></app-rating>
                 </div>
@@ -75,6 +97,8 @@ export default {
 
 		if(this.$route.params.kategori === 'Politik'){
 			params = 2;
+		}else if (this.$route.params.kategori === 'Peristiwa') {
+			params = 1;
 		}else if (this.$route.params.kategori === 'Ekonomi') {
 			params = 3;
 		}else if (this.$route.params.kategori === 'Pendidikan') {
@@ -94,10 +118,9 @@ export default {
 		}else if (this.$route.params.kategori === 'Gaya') {
 			params = 12;
 		}
-
 		var pages = this.articles.length / 20 + 1;
 
-			Axios.get('news/categori/'+params+'/'+pages,
+			Axios.get('news/categori/'+pages+'/'+params,
 			).then((result) => {
 				if(result.data.result.length){
             		this.articles = this.articles.concat(result.data.result);
@@ -109,6 +132,7 @@ export default {
 					$state.complete();
 				}
 			});
+			console.log(params);
 		},
 
 	},
