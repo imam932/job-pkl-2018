@@ -41,7 +41,7 @@ export default {
 	async created (){
 		NewsApi.bannerNews().then((result) => {
 			this.articles = result.data.result;
-			// console.log(result.data.result);
+			console.log(result.data.result);
 		}).catch((err) => {
 			console.log(err);
 		}).finally(()=>{

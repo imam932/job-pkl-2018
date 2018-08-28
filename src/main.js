@@ -18,17 +18,17 @@ import '@/assets/js/jquery.min.js'
 import '@/assets/js/move-top.js'
 import '@/assets/js/bootstrap-3.1.1.min.js'
 import '@/assets/js/banner.js'
+require('moment/locale/id')
 
 
 // Vue.use(BootstrapVue)
+var SocialSharing = require('vue-social-sharing')
 Vue.use(VueResource);
 Vue.use(VueProgressiveImage)
-var SocialSharing = require('vue-social-sharing')
 Vue.use(SocialSharing)
 Axios.defaults.baseURL = 'http://localhost:8000/'
 Vue.config.productionTip = false
 const moment = require('moment')
-require('moment/locale/id')
 Vue.use(VueMoment, {
   moment
 })
